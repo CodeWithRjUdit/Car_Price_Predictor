@@ -1,6 +1,11 @@
 from __future__ import annotations
 
 import math
+import sys
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(PROJECT_ROOT))
 
 from car_price_predictor.data import load_car_data
 from car_price_predictor.inference import load_model, predict_price
