@@ -46,8 +46,6 @@ st.subheader("Enter vehicle details")
 col1, col2 = st.columns(2)
 
 companies = sorted(car_data["company"].dropna().unique().tolist())
-fuel_types = sorted(car_data["fuel_type"].dropna().unique().tolist())
-
 with col1:
     company = st.selectbox("Manufacturer", options=companies)
 
@@ -70,8 +68,15 @@ with col1:
         help=f"Available training-data range: {min_year}–{max_year}.",
     )
 
+fuel_options = sorted(
+    car_data.loc[
+        (car_data["company"] == company) & (car_data["name"] == car_name),
+        "fuel_type",
+    ].dropna().unique().tolist()
+)
+
 with col2:
-    fuel_type = st.selectbox("Fuel type", options=fuel_types)
+    fuel_type = st.selectbox("Fuel type", options=fuel_options)
 
     max_kms = int(car_data["kms_driven"].max())
     default_kms = min(50_000, max_kms)
