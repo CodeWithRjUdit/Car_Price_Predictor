@@ -40,7 +40,7 @@ This score is reproduced here as a notebook-reported result only; it has not bee
 - Important price drivers are absent, including condition, location, ownership count, accident history, service records, transmission, and insurance status.
 - The model is linear and can produce implausible or non-positive estimates for unusual feature combinations. The notebook includes a synthetic example that produced a negative prediction.
 - The notebook's preprocessing setup should be made fully reproducible before making stronger performance claims.
-- The exact scikit-learn version used to serialize the pickle artifact is not recorded in the notebook.
+- The pickle artifact's embedded scikit-learn version metadata records `1.3.0`; the deployment environment should use that version when loading this model.
 
 ## Monitoring and maintenance
 
