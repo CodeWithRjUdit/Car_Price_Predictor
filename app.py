@@ -57,8 +57,11 @@ with col1:
     )
     car_name = st.selectbox("Car model", options=model_options)
 
-    min_year = int(car_data["year"].min())
-    max_year = int(car_data["year"].max())
+    vehicle_rows = car_data.loc[
+        (car_data["company"] == company) & (car_data["name"] == car_name)
+    ]
+    min_year = int(vehicle_rows["year"].min())
+    max_year = int(vehicle_rows["year"].max())
     year = st.number_input(
         "Year of manufacture",
         min_value=min_year,
