@@ -77,7 +77,7 @@ Windows:
 
 ```powershell
 py -3.11 -m venv .venv
-.venv\\Scripts\\activate
+.venv\Scripts\Activate.ps1
 ```
 
 macOS / Linux:
