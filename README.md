@@ -127,7 +127,7 @@ The root-level `requirements.txt` declares the Python packages used by the app. 
 
 The model is trained on a relatively small historical dataset. It does not account for location, vehicle condition, ownership count, accident history, insurance, transmission, service records, or current market changes. Linear regression can also produce implausible values for unusual feature combinations; the app explicitly warns when a prediction is non-positive or outside the observed training-price range.
 
-The original pickle artifact's exact scikit-learn version was not recorded in the notebook. The dependency file therefore defines a consistent deployment baseline; if the first cloud build reports an estimator-version or pickle compatibility issue, the installed scikit-learn version must be aligned with the environment that created the artifact or the model must be re-exported from a reproducible training environment.
+The serialized model artifact records scikit-learn version `1.3.0`. The deployment dependencies pin scikit-learn to that version to match the environment recorded inside the pickle. Python 3.11 is selected to match the notebook metadata.
 
 ## Security
 
