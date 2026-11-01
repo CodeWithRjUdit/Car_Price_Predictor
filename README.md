@@ -1,12 +1,25 @@
 # Used Car Price Estimator
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://car-price-predictor-3.streamlit.app/)
+[![GitHub repository](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/CodeWithRjUdit/Car_Price_Predictor)
+[![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3.0-orange?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
+
 A Streamlit application that estimates the resale price of a used car from selected vehicle details. It uses the trained scikit-learn pipeline already stored in this repository.
 
 **This project is an educational machine-learning demonstration.** Its estimate is based on historical listing data and should not be interpreted as a current market valuation.
 
 ## Live application
 
-Deploy this repository with Streamlit Community Cloud to create the public application URL. The entrypoint is `app.py` on the `main` branch.
+**Try the deployed application:** [https://car-price-predictor-3.streamlit.app/](https://car-price-predictor-3.streamlit.app/)
+
+The application is hosted on Streamlit Community Cloud. The deployment uses the `main` branch and `app.py` as its entrypoint.
+
+## Project overview
+
+Select the manufacturer, car model, fuel type, manufacture year, and kilometres driven. The application sends those values to the committed scikit-learn pipeline and displays an estimated resale price in Indian rupees.
+
+The app loads its dropdown options and observed feature ranges from `Cleaned_Car.csv`. Model inference is separated from the Streamlit interface so the prediction code can also be exercised by the local smoke-test script.
 
 ## How it works
 
